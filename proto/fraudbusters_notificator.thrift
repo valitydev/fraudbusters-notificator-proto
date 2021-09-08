@@ -1,0 +1,3 @@
+
+namespace java com.rbkmoney.damsel.fraudbusters_notificator
+namespace erlang fraudbusters_notificator
