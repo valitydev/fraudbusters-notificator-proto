@@ -83,7 +83,7 @@ service NotificationService {
 
       Notification create(1: Notification notification);
 
-      void delete(1: NotificationID id);
+      void remove(1: NotificationID id);
 
       void updateStatus(1: NotificationID id, 2: NotificationStatus notification_status);
 
@@ -100,7 +100,7 @@ service ChannelService {
 
       Channel create(1: Channel channel);
 
-      void delete(1: ChannelID id);
+      void remove(1: ChannelID id);
 
       ChannelListResponse getAll();
 
