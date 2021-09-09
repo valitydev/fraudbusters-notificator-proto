@@ -2,8 +2,9 @@
 namespace java com.rbkmoney.damsel.fraudbusters_notificator
 namespace erlang fraudbusters_notificator
 
-typedef i64 NotificationID
-typedef i64 NotificationTemplateID
+typedef i64 ID
+typedef ID NotificationID
+typedef ID NotificationTemplateID
 typedef string ChannelID
 /**
  * Отметка во времени согласно RFC 3339.
@@ -75,6 +76,15 @@ struct NotificationTemplateListResponse{
     1: list<NotificationTemplate> notification_templates;
 }
 
+struct Filter {
+    1: optional string search_field;
+}
+
+struct Page {
+    1: required i64 size
+    2: optional ID continuation_id
+}
+
 
 /**
 * Интерфейс для работы с нотификациями
@@ -89,7 +99,7 @@ service NotificationService {
 
       ValidationResponse validate(1: Notification notification);
 
-      NotificationListResponse getAll();
+      NotificationListResponse getAll(1: Page page, 2: Filter filter);
 }
 
 
@@ -102,7 +112,7 @@ service ChannelService {
 
       void remove(1: ChannelID id);
 
-      ChannelListResponse getAll();
+      ChannelListResponse getAll(1: Page page, 2: Filter filter);
 
       ChannelTypeListResponse getAllTypes();
 
