@@ -38,7 +38,7 @@ enum ChannelType {
 }
 
 struct Channel {
-    1: required NotificationID name;
+    1: required ChannelID name;
     2: optional Timestamp created_at;
     3: required ChannelType type;
     4: required string destination;
