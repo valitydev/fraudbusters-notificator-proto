@@ -14,14 +14,14 @@ typedef string ChannelID
  */
 typedef string Timestamp
 
-enum NotificationStatus{
-   CREATED
-   ACTIVE
-   ARCHICE
+enum NotificationStatus {
+    CREATED
+    ACTIVE
+    ARCHICE
 }
 
 struct Notification {
-    1:  optional NotificationID id;
+    1: optional NotificationID id;
     2: required string name;
     3: required string subject;
     4: optional Timestamp created_at;
@@ -45,8 +45,8 @@ struct Channel {
 }
 
 union ValidationResponse {
-   1: list<string> errors;
-   2: string result;
+    1: list<string> errors;
+    2: string result;
 }
 
 struct NotificationListResponse {
@@ -57,7 +57,7 @@ struct ChannelListResponse {
     1: required list<Channel> channels;
 }
 
-struct ChannelTypeListResponse{
+struct ChannelTypeListResponse {
     1: required list<string> channel_types;
 }
 
@@ -72,7 +72,7 @@ struct NotificationTemplate {
     8: optional Timestamp updated_at;
 }
 
-struct NotificationTemplateListResponse{
+struct NotificationTemplateListResponse {
     1: list<NotificationTemplate> notification_templates;
 }
 
@@ -91,15 +91,15 @@ struct Page {
 */
 service NotificationService {
 
-      Notification create(1: Notification notification);
+    Notification create(1: Notification notification);
 
-      void remove(1: NotificationID id);
+    void remove(1: NotificationID id);
 
-      void updateStatus(1: NotificationID id, 2: NotificationStatus notification_status);
+    void updateStatus(1: NotificationID id, 2: NotificationStatus notification_status);
 
-      ValidationResponse validate(1: Notification notification);
+    ValidationResponse validate(1: Notification notification);
 
-      NotificationListResponse getAll(1: Page page, 2: Filter filter);
+    NotificationListResponse getAll(1: Page page, 2: Filter filter);
 }
 
 
@@ -108,13 +108,13 @@ service NotificationService {
 */
 service ChannelService {
 
-      Channel create(1: Channel channel);
+    Channel create(1: Channel channel);
 
-      void remove(1: ChannelID id);
+    void remove(1: ChannelID id);
 
-      ChannelListResponse getAll(1: Page page, 2: Filter filter);
+    ChannelListResponse getAll(1: Page page, 2: Filter filter);
 
-      ChannelTypeListResponse getAllTypes();
+    ChannelTypeListResponse getAllTypes();
 
 }
 
@@ -123,7 +123,7 @@ service ChannelService {
 */
 service NotificationTemplateService {
 
-      NotificationTemplateListResponse getAll();
+    NotificationTemplateListResponse getAll();
 
 }
 
