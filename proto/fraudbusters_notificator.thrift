@@ -2,7 +2,7 @@
 namespace java com.rbkmoney.damsel.fraudbusters_notificator
 namespace erlang fraudbusters_notificator
 
-const i32 VALIDATION_ERROR = 1;
+const i32 VALIDATION_ERROR = 1
 
 typedef i64 ID
 typedef ID NotificationID
