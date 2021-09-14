@@ -2,6 +2,8 @@
 namespace java com.rbkmoney.damsel.fraudbusters_notificator
 namespace erlang fraudbusters_notificator
 
+const i32 VALIDATION_ERROR = 1;
+
 typedef i64 ID
 typedef ID NotificationID
 typedef ID NotificationTemplateID
@@ -89,7 +91,8 @@ struct Page {
 * Общее исключение сервиса работы с нотификациями
 **/
 exception NotificationServiceException {
-    1: required string reason
+    1: required i32 code
+    2: optional string reason
 }
 
 /**
