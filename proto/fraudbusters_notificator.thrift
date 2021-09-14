@@ -100,7 +100,7 @@ exception NotificationServiceException {
 */
 service NotificationService {
 
-    Notification create(1: Notification notification);
+    Notification create(1: Notification notification) throws (1: NotificationServiceException ex);
 
     void remove(1: NotificationID id);
 
