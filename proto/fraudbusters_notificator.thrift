@@ -85,6 +85,12 @@ struct Page {
     2: optional ID continuation_id
 }
 
+/**
+* Общее исключение сервиса работы с нотификациями
+**/
+exception NotificationServiceException {
+    1: required string reason
+}
 
 /**
 * Интерфейс для работы с нотификациями
