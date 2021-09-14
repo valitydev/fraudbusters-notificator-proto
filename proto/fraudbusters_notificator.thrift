@@ -17,7 +17,7 @@ typedef string Timestamp
 enum NotificationStatus {
     CREATED
     ACTIVE
-    ARCHICE
+    ARCHIVE
 }
 
 struct Notification {
