@@ -2,6 +2,8 @@
 namespace java com.rbkmoney.damsel.fraudbusters_notificator
 namespace erlang fraudbusters_notificator
 
+const i32 VALIDATION_ERROR = 1
+
 typedef i64 ID
 typedef ID NotificationID
 typedef ID NotificationTemplateID
@@ -17,7 +19,7 @@ typedef string Timestamp
 enum NotificationStatus {
     CREATED
     ACTIVE
-    ARCHICE
+    ARCHIVE
 }
 
 struct Notification {
@@ -85,6 +87,13 @@ struct Page {
     2: optional ID continuation_id
 }
 
+/**
+* Общее исключение сервиса работы с нотификациями
+**/
+exception NotificationServiceException {
+    1: required i32 code
+    2: optional string reason
+}
 
 /**
 * Интерфейс для работы с нотификациями
