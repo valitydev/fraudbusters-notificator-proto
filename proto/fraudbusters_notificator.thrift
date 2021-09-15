@@ -53,10 +53,12 @@ union ValidationResponse {
 
 struct NotificationListResponse {
     1: required list<Notification> notifications;
+    2: optional NotificationID continuationId;
 }
 
 struct ChannelListResponse {
     1: required list<Channel> channels;
+    2: optional ChannelID continuationId;
 }
 
 struct ChannelTypeListResponse {
