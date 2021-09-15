@@ -86,7 +86,7 @@ struct Filter {
 
 struct Page {
     1: required i64 size
-    2: optional ID continuation_id
+    2: optional string continuation_id
 }
 
 /**
