@@ -111,6 +111,8 @@ service NotificationService {
     ValidationResponse validate(1: Notification notification);
 
     NotificationListResponse getAll(1: Page page, 2: Filter filter);
+
+    Notification getById(1: NotificationID id);
 }
 
 
@@ -126,6 +128,8 @@ service ChannelService {
     ChannelListResponse getAll(1: Page page, 2: Filter filter);
 
     ChannelTypeListResponse getAllTypes();
+
+    Channel getById(1: ChannelID id);
 
 }
 
