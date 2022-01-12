@@ -1,5 +1,5 @@
 
-namespace java com.rbkmoney.damsel.fraudbusters_notificator
+namespace java dev.vality.damsel.fraudbusters_notificator
 namespace erlang fraudbusters_notificator
 
 const i32 VALIDATION_ERROR = 1
