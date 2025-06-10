@@ -1,17 +1,10 @@
-name: "Java: Deploy"
+name: Vality basic linters
 
 on:
-  push:
+  pull_request:
     branches:
-      - "master"
-      - "main"
+      - "*"
 
 jobs:
-  deploy:
-    uses: valitydev/java-workflow/.github/workflows/maven-thrift-deploy.yml@v3
-    secrets:
-      server-username: ${{ secrets.OSSRH_USERNAME }}
-      server-password: ${{ secrets.OSSRH_TOKEN }}
-      deploy-secret-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-      deploy-secret-key-password: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-      mm-webhook-url: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+  lint:
+    uses: valitydev/base-workflows/.github/workflows/basic-linters.yml@v1
