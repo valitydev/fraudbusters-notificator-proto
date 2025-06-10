@@ -37,6 +37,7 @@ struct Notification {
 
 enum ChannelType {
     mail
+    telegram
 }
 
 struct Channel {
